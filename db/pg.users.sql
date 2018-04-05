@@ -13,10 +13,12 @@ CREATE TABLE IF NOT EXISTS users (
 --
 
 INSERT INTO users (name, email, mobile, address) VALUES
-('Al-Amin Khan', 'al@min.com', '6546464', 'Dhaka,Bangladesh'),
-('Sahed Bhuiyan', 's@hed.com', '987979', 'Khulna, Bangladesh'),
-('Mamun', 'm@mun.com', '646465', 'Bikrom Pur'),
-('foysal', 'foysal@yahoo.com', '1234556', 'Dhaka, Bangladesh.');
+('jeremy', 'al@min.com', '6546464', 'Dhaka,Bangladesh'),
+('Bill', 's@hed.com', '987979', 'Khulna, Bangladesh'),
+('Cora', 'm@mun.com', '646465', 'Bikrom Pur'),
+('Riliee', 'foysal@yahoo.com', '1234556', 'Dhaka, Bangladesh.'),
+('Ginger', 'foysal@yahoo.com', '1234556', 'Dhaka, Bangladesh.'),
+('Cora', 'foysal@yahoo.com', '1234556', 'Dhaka, Bangladesh.');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

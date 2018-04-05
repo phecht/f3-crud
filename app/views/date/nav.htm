@@ -1,0 +1,17 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <ul class="nav">
+
+
+            <li <check if="{{ @page_head == 'Date List' }}">class="active"</check>><a href="{{ @BASE.'/' }}">
+                <i class="icon-th icon-black"></i> Read</a></li>
+            <li <check if="{{ @page_head == 'Create Date' }}">class="active"</check>>
+                <a href="{{ @BASE.'/date/create' }}"><i class="icon-plus-sign icon-black"></i> Create</a></li>
+
+            <check if="{{ @page_head == 'Update date' }}">
+            <li class="active"><a href="javascript:void(0);"><i class="icon-plus-sign icon-black"></i> Update</a>
+            </li>
+            </check>
+        </ul>
+    </div>
+</div>

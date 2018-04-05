@@ -17,7 +17,12 @@
                 <h1>{{ @page_head }}</h1>
             </div>
 
-            <include href="user/nav.htm" />
+            <check if="{{ @type == 'date' }}">
+                <include href="date/nav.htm" />
+            </check>
+            <check if="{{ @page_head == 'user' }}">
+                <include href="user/nav.htm" />
+            </check>
 
             <check if="{{ @message }}">
             <div class="alert alert-success">

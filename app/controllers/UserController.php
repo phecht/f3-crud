@@ -6,9 +6,10 @@ class UserController extends Controller {
     {
         $user = new User($this->db);
         $this->f3->set('users',$user->all());
-        $this->f3->set('page_head','User List');
+        $this->f3->set('page_head','Employee List');
         $this->f3->set('message', $this->f3->get('PARAMS.message'));
         $this->f3->set('view','user/list.htm');
+        $this->f3->set('type','user');
 	}
 
     public function create()
@@ -23,6 +24,7 @@ class UserController extends Controller {
         {
             $this->f3->set('page_head','Create User');
             $this->f3->set('view','user/create.htm');
+            $this->f3->set('type','user');
         }
 
     }
@@ -42,6 +44,7 @@ class UserController extends Controller {
             $this->f3->set('user',$user);
             $this->f3->set('page_head','Update User');
             $this->f3->set('view','user/update.htm');
+            $this->f3->set('type','user');
         }
 
     }

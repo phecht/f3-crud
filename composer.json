@@ -1,0 +1,17 @@
+{
+    "name": "peter/phf3-crud",
+    "description": "A simple CRUD using PHP and Fatfree Framework",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "P Dev Hecht",
+            "email": "pdevhecht@gmail.com"
+        }
+    ],
+    "require": {
+        "bcosca/fatfree": "^3.6",
+        "twitter/bootstrap": "^4.0",
+        "heroku/heroku-buildpack-php": "*"
+    }
+}
