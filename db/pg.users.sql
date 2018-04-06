@@ -20,6 +20,3 @@ INSERT INTO users (name, email, mobile, address) VALUES
 ('Ginger', 'foysal@yahoo.com', '1234556', 'Dhaka, Bangladesh.'),
 ('Cora', 'foysal@yahoo.com', '1234556', 'Dhaka, Bangladesh.');
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
