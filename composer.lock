@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "27fdd9607111dbd2f7e1289df2a65e9f",
+    "content-hash": "79a8289291cc0069c35fa6e93a40b1f0",
     "packages": [
         {
             "name": "bcosca/fatfree",
@@ -772,7 +772,7 @@
             "time": "2018-02-20T21:35:23+00:00"
         },
         {
-            "name": "twitter/bootstrap",
+            "name": "twbs/bootstrap",
             "version": "v4.0.0",
             "source": {
                 "type": "git",

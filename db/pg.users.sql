@@ -1,11 +1,11 @@
 
-
 CREATE TABLE IF NOT EXISTS users (
   id serial PRIMARY KEY,
   name varchar(50)  NOT NULL,
   email varchar(150)  NOT NULL,
   mobile varchar(20)  NOT NULL,
-  address varchar(255)  NOT NULL
+  address varchar(255)  NOT NULL,
+  position integer REFERENCES positions(id)
 )  ;
 
 --
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS users (
 --
 
 INSERT INTO users (name, email, mobile, address) VALUES
-('jeremy', 'al@min.com', '6546464', 'Dhaka,Bangladesh'),
+('jeremy', 'jeremyl@min.com', '6546464', 'Dhaka,Bangladesh'),
 ('Bill', 's@hed.com', '987979', 'Khulna, Bangladesh'),
 ('Cora', 'm@mun.com', '646465', 'Bikrom Pur'),
 ('Riliee', 'foysal@yahoo.com', '1234556', 'Dhaka, Bangladesh.'),
