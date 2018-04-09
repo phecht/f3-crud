@@ -9,13 +9,13 @@ if ( file_exists( '.env2' ) ) {
 	$f3->config( '.env2' );
 } else {
 	$temp = getenv( 'db_dns' );
-	$f3->set( 'db_dns', $tmp );
+	$f3->set( 'db_dns', $temp );
 	$temp = getenv( 'db_name' );
-	$f3->set( 'db_name', $tmp );
+	$f3->set( 'db_name', $temp );
 	$temp = getenv( 'db_pass' );
-	$f3->set( 'db_pass', $tmp );
+	$f3->set( 'db_pass', $temp );
 	$temp = getenv( 'db_user' );
-	$f3->set( 'db_user', $tmp );
+	$f3->set( 'db_user', $temp );
 }
 
 
