@@ -1,6 +1,13 @@
 <?php
-
-
+/**
+ * Index.php is the main enty point for this app. Doc comment
+ *
+ * @category Index
+ * @package BCStuff
+ * @author P Dev Hecht
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link http://google.com
+ */
 require 'lib/base.php';
 
 $f3 = Base::instance();
