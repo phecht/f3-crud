@@ -8,7 +8,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @link http://google.com
  */
-require 'lib/base.php';
+require 'vendor/bcosca/fatfree/lib/base.php';
 
 $f3 = Base::instance();
 
