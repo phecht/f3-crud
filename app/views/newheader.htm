@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>{{@page_head}}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme not yet implemented-->
+    <!-- <link href="vendor/twbs/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template not yet implemented-->
+	<!-- <link href="theme.css" rel="stylesheet"> -->
+	
+	
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <div class="container">
+
+		<div class="jumbotron">
+			<h1>{{ @page_head }}</h1>
+		</div>
+
+		<include href="nav.htm"/>
+		<check if="{{ @type == 'date' }}">
+			<include href="date/nav.htm" />
+		</check>
+		<check if="{{ @page_head == 'user' }}">
+			<include href="user/nav.htm" />
+		</check>
+		<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+
+			<button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<span class="navbar-text">Bar Car</span>
+			<ul class="navbar-nav">
+			<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" 
+						data-target="dropdown_target" href="#">
+						Dropdown
+						<span class="carret"></span>
+					</a>
+			<div class="dropdown-menu" aria-labelledby="dropdown_target">
+				<ul class="navbar-nav">
+						<a class="dropdown-item" href="/">Dashboard</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="/date">Dates</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item">CSS Videos</a>
+					<a class="dropdown-item">Bootstrap Videos</a>
+				</ul>
+			</div>
+			</li>
+			  <li class="nav-item">
+					  <a class="nav-link" href="#">Link 2</a>
+			  </li>
+			  <li class="nav-item">
+					  <a class="nav-link" href="#">Link 3</a>
+			  </li>
+			</ul>
+		</nav>
+
+		<check if="{{ @message }}">
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>{{ @message }}</strong>
+		</div>
+		</check>

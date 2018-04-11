@@ -6,11 +6,11 @@ class Controller {
 	protected $db;
 
 	function beforeroute() {
-		$this->f3->set('message','');
+		$this->f3->set( 'message', '' );
 	}
 
 	function afterroute() {
-		echo Template::instance()->render('layout.htm');	
+		echo Template::instance()->render( 'layout.htm' );	
 	}
 
 	function __construct() {
@@ -23,7 +23,7 @@ class Controller {
 			$f3->get( 'db_pass' )
 		);
 
-		$this->f3=$f3;
-		$this->db=$db;
+		$this->f3 = $f3;
+		$this->db = $db;
 	}
 }
