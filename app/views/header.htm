@@ -5,7 +5,7 @@
         <title>{{ @site }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap -->
-        <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="../../vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="../../ui/css/crud.css" rel="stylesheet" media="screen">
     </head>
 
@@ -21,7 +21,7 @@
             <check if="{{ @type == 'date' }}">
                 <include href="date/nav.htm" />
             </check>
-            <check if="{{ @page_head == 'user' }}">
+            <check if="{{ @type == 'user' }}">
                 <include href="user/nav.htm" />
             </check>
 

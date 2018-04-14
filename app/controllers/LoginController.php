@@ -10,4 +10,8 @@ class LoginController extends Controller {
 		$this->f3->set( 'type', 'login' );
 
 	}
+
+	public function authenticate() {
+
+	}
 }

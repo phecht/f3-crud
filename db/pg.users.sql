@@ -7,9 +7,8 @@ CREATE TABLE IF NOT EXISTS users (
   address varchar(255)  NOT NULL
 )  ;
 
-ALTER TABLE users
-  ADD COLUMN IF NOT EXISTS position integer REFERENCES positions(id);
-  password varchar(100) 
+ALTER TABLE users ADD COLUMN IF NOT EXISTS position integer REFERENCES positions(id);
+ALTER TABLE users ADD COLUMN IF NOT EXISTS thepassword varchar(100);
 
 --
 -- Dumping data for table users
@@ -23,3 +22,7 @@ INSERT INTO users (name, email, mobile, address) VALUES
 ('Ginger', 'foysal@yahoo.com', '1234556', 'Dhaka, Bangladesh.'),
 ('Tory', 'foysal@yahoo.com', '1234556', 'Dhaka, Bangladesh.');
 
+INSERT INTO users (name, email, mobile, address) VALUES
+('peter', 'pdevhecht@min.com', '6546464', 'Dhaka,Bangladesh');
+
+UPDATE users SET thepassword='$2y$10$tm2fNFVC47A5wj7CkLXYxehFTR3WCpOolFCjYedJv7idIzMwQsOp6';
