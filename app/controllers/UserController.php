@@ -11,6 +11,14 @@ class UserController extends Controller {
 	function beforeroute() {
 	}
 
+	/**
+	 * Overwrite parent afterroute to avoid the login page
+	 * looking bad.
+	 */
+	function afterroute() {
+
+	}
+
 	function authenticate() {
 
 		$useremail = $this->f3->get( 'POST.useremail' );
@@ -33,7 +41,7 @@ class UserController extends Controller {
 
 	public function logout() {
 		$this->f3->set( 'SESSION.user', '' );
-		echo "logout";
+		echo 'logout';
 		$this->f3->reroute( '/login' );
 	}
 
@@ -44,6 +52,9 @@ class UserController extends Controller {
 		$this->f3->set( 'message', $this->f3->get( 'PARAMS.message' ) );
 		$this->f3->set( 'view', 'user/list.htm' );
 		$this->f3->set( 'type', 'user' );
+		// Need to call parent afterroute, but since it is one line
+		// what can go wrong?
+		echo Template::instance()->render( 'layout.htm' );
 	}
 
 	public function create() {

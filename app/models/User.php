@@ -2,7 +2,7 @@
 
 class User extends DB\SQL\Mapper {
 
-	public function __construct( DB\SQL $db) {
+	public function __construct( DB\SQL $db ) {
 		parent::__construct( $db, 'users' );
 	}
 
@@ -25,7 +25,7 @@ class User extends DB\SQL\Mapper {
 		$this->load( array( 'email=?', $name ) );
 	}
 	public function edit( $id ) {
-		$this->load( array( 'id=?', $id ));
+		$this->load( array( 'id=?', $id ) );
 		$this->copyFrom( 'POST' );
 		$this->update();
 	}

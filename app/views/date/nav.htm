@@ -2,13 +2,13 @@
     <div class="navbar-inner">
 
 		<ul class="nav">
-			<h4>{{@page_head}}</h4>
+			<h4>{{@page_head}}X</h4>
 			<check if="{{ @page_head == 'Date List' }}">
 
             <li> 
 					<a href="{{ @BASE.'/date/create' }}">
 						<i class="active icon-plus-sign icon-black"></i> Create</a>
-				</li>
+			</li>
 			</check>
 			<check if="{{ @page_head == 'Create Date' }}">active
 

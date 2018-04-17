@@ -8,8 +8,11 @@ class Controller {
 	function beforeroute() {
 
 		if ( $this->f3->get( 'SESSION.user' ) === null ) {
+			$this->f3->set( 'loggedin', '0' );
 			$this->f3->reroute( '/login' );
 			exit;
+		} else {
+			$this->f3->set( 'loggedin', '1' );
 		}
 
 	}
