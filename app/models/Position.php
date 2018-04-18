@@ -1,9 +1,9 @@
 <?php
 
-class Date extends DB\SQL\Mapper {
+class Position extends DB\SQL\Mapper {
 
 	public function __construct( DB\SQL $db ) {
-		parent::__construct( $db, 'dates' );
+		parent::__construct( $db, 'position' );
 	}
 
 	public function all() {

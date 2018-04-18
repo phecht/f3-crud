@@ -1,0 +1,25 @@
+<table width="600" cellpadding="5" class="table table-hover table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">Position</th>
+
+  
+    </tr>
+    </thead>
+
+    <tbody>
+    <repeat group="{{ @dates }}" value="{{ @date }}">
+        <tr>
+            <td>{{ trim(@date.datename) }}</td>
+            <td>{{ trim(@date.workdate) }}</td>
+            <td><a href="{{ @BASE.'/position/update/'. @position.id }}" class="btn btn-primary">
+                <i class="icon-edit icon-white"></i> Edit</a>
+                &nbsp; <a href="{{ @BASE.'/position/delete/'. @position.id }}" class="btn btn-danger">
+                    <i class="icon-remove icon-white"></i>
+                    Delete</a></td>
+
+        </tr>
+    </repeat>
+    </tbody>
+
+</table>
