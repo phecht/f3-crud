@@ -10,5 +10,5 @@ CREATE TABLE IF NOT EXISTS events (
 
 ALTER TABLE events ADD COLUMN IF NOT EXISTS dashdisplay INTEGER;
 
-ALTER TABLE events ALTER COLUMN dashdisplay 
-	ADD CONSTRAINT ( dashdisplay >= 0 AND dashdisplay <=1); 
+ALTER TABLE events ADD CONSTRAINT lazybool CHECK (dashdisplay >=0 AND dashdisplay<=1);
+
