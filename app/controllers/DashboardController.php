@@ -9,4 +9,7 @@ class DashboardController extends Controller {
 		$this->f3->set( 'type', 'dashboard' );
 
 	}
+	public function events() {
+		$event = new Event( $this->db );
+	}
 }

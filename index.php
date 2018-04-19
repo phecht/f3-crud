@@ -9,7 +9,7 @@
  * @link http://google.com
  */
 //require 'vendor/bcosca/fatfree/lib/base.php';
-require_once 'vendor/autoload.php';
+require 'vendor/autoload.php';
 $f3 = Base::instance();
 
 if ( file_exists( '.env2' ) ) {
