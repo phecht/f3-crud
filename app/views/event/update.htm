@@ -1,16 +1,32 @@
-<form action="{{ @BASE.'/date/update' }}" method="post" class="form-horizontal">
+<form action="{{ @BASE.'/event/update' }}" method="post" class="form-horizontal">
 
-    <div class="input-prepend">
-        <span class="add-on"><i class="icon-user icon-black"></i> Name</span>
-        <input type="text" id="datename" name="datename" value="{{ @POST.datename }}" class="input-xlarge" />
-    </div><br/><br/>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="eventname">Event Name</label>
+		<div class="col-sm-10">
+			<input type="text" id="eventname" name="eventname" value="{{ @POST.eventname }}" class="form-control" />
+		</div>
+	</div>
 
-    <div class="input-prepend">
-        <span class="add-on"><i class="icon-envelope icon-black"></i> Email</span>
-        <input type="text" id="workdate" name="workdate" value="{{ @POST.workdate }}" class="input-xlarge" />
-    </div>
-    <br/><br/>
+	<div class="form-group">
 
+		<label class="control-label col-sm-2" for="eventdate">Event Date</label>
+		<div class="col-sm-10">
+			<input type="text" id="eventdate" name="eventdate" value="{{ @POST.eventdate }}" class="form-control" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="starttime">Event Time</label>
+		<div class="col-sm-10">
+			<input type="text" id="starttime" name="starttime" value="{{ @POST.starttime }}" class="form-control" />
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="duration">Duration</label>
+		<div class="col-sm-10">
+			<input type="text" id="duration" name="duration" value="{{ @POST.duration }}" class="form-control" />
+		</div>
+	</div>
 
 
     <div class="control-group">

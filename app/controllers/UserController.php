@@ -84,6 +84,7 @@ class UserController extends Controller {
 			$this->f3->set( 'page_head', 'Update User' );
 			$this->f3->set( 'view', 'user/update.htm' );
 			$this->f3->set( 'type', 'user' );
+			echo Template::instance()->render( 'layout.htm' );
 		}
 
 	}

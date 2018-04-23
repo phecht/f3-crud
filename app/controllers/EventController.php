@@ -19,7 +19,7 @@ class EventController extends Controller {
 			$event = new Event( $this->db );
 			$event->add();
 
-			$this->f3->reroute( '/dsuccess/New event Created' );
+			$this->f3->reroute( '/esuccess/New event Created' );
 		} else {
 			$this->f3->set( 'page_head', 'Create Event' );
 			$this->f3->set( 'view', 'event/create.htm' );
@@ -34,7 +34,7 @@ class EventController extends Controller {
 
 		if ( $this->f3->exists( 'POST.update' ) ) {
 			$event->edit( $this->f3->get( 'POST.id' ) );
-			$this->f3->reroute( '/dsuccess/Event Updated' );
+			$this->f3->reroute( '/esuccess/Event Updated' );
 		} else {
 			$event->getById( $this->f3->get( 'PARAMS.id' ) );
 			$this->f3->set( 'user', $event );
@@ -51,6 +51,6 @@ class EventController extends Controller {
 			$event->delete( $this->f3->get( 'PARAMS.id' ) );
 		}
 
-		$this->f3->reroute( '/dsuccess/Event Deleted' );
+		$this->f3->reroute( '/esuccess/Event Deleted' );
 	}
 }

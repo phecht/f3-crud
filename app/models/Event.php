@@ -31,4 +31,9 @@ class Event extends DB\SQL\Mapper {
 		$this->load( array( 'id=?', $id ) );
 		$this->erase();
 	}
+
+	public function dashdisplay() {
+		$this->load( array( 'dashdisplay=?', '1' ) );
+		return $this->query;
+	}
 }

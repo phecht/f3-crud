@@ -1,6 +1,7 @@
 <script>
 		// Set the date we're counting down to
-		var countDownDate = new Date("May 5, 2018 16:03:25").getTime();
+		var countDownDate = new Date( "{{ @dashevents[0].eventdate }} {{@dashevents[0].starttime }}").getTime()
+		//var countDownDate = new Date("May 5, 2018 16:03:25").getTime();
 		
 		// Update the count down every 1 second
 		var x = setInterval(function() {
@@ -37,11 +38,18 @@
         <tr>
           <td><a href="/date">Schedule</a></td>
 		  <td>Events: <p> </p>
-			<p>Derby:</p><p id="demo"></p></td>
+
+			<repeat group="{{ @dashevents }}" value="{{ @item }}">
+				<p>{{ @item.eventname }}, <h4 id="demo"></h4></p>
+
+			</repeat>
+		</td>
           <td>notes</td>
         </tr>
         <tr>
-          <td>Goals</td>
+		  <td>Goals
+
+		  </td>
           <td>Joke:</td>
           <td><a href="https://www.accuweather.com/en/us/denver-co/80203/weather-forecast/347810" class="aw-widget-legal">
             <!--
