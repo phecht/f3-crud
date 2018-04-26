@@ -12,9 +12,4 @@ class DashboardController extends Controller {
 
 	}
 
-
-	public function getevents() {
-		$event = new Event( $this->db );
-		$this->f3->set( 'dashevents', $event->dashdisplay() );
-	}
 }

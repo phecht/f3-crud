@@ -1,0 +1,33 @@
+<table width="600" cellpadding="5" class="table table-hover table-bordered">
+	<thead>
+		<tr>
+			<th scope="col">Start time</th>
+			<th scope="col">End time</th>
+			<th scope="col">User</th>
+
+		</tr>
+	</thead>
+
+	<tbody>
+		<repeat group="{{ @workshifts }}" value="{{ @workshift }}">
+			<tr>
+				<td>{{ trim(@workshift.startwork) }}</td>
+				<td>{{ trim(@workshift.endwork) }}</td>
+				<td>
+					<a href="{{ @BASE.'/workshift/update/'. @workshift.id }}" class="btn btn-primary">
+						<i class="icon-edit icon-white"></i>Edit</a>
+					<a href="{{ @BASE.'/workshift/delete/'. @workshift.id }}" class="btn btn-danger">
+						<i class="icon-remove icon-white"></i>Delete</a>
+				</td>
+
+			</tr>
+		</repeat>
+	</tbody>
+	<tbody>
+	<repeat group="{{ @user_rows }}" value="{{ @uservals }}">
+			<td>{{ @uservals.id }}</td>
+			<td>{{ @uservals.name }}</td>
+	</repeat>
+</tbody>
+
+</table>
