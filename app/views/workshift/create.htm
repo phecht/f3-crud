@@ -18,20 +18,32 @@
 <form action="{{ @BASE.'/workshift/create' }}" method="post" class="form-horizontal">
 
 	<div class="input-prepend">
-		<span class="add-on"><i class="icon-user icon-black"></i> Start</span>
+		<span class="add-on">
+			<i class="icon-user icon-black"></i> Start</span>
 		<input type="text" id="startwork" name="startwork" value="" class="input-xlarge" />
 	</div>
 
 	<div class="input-prepend">
-		<span class="add-on"><i class="icon-envelope icon-black"></i> End</span>
+		<span class="add-on">
+			<i class="icon-envelope icon-black"></i> End</span>
 		<input type="text" id="endwork" name="endwork" value="" class="input-xlarge" />
 	</div>
 
 	<div class="input-prepend">
-		<span class="add-on"><i class="icon-envelope icon-black"></i> User #</span>
-		<input type="text" id="userid" name="userid" value="" class="input-xlarge" />
+		<span class="add-on">
+			<i class="icon-envelope icon-black"></i> User #</span>
+		<input type="text" id="useridX" name="useridX" value="" class="input-xlarge" />
 	</div>
 
+	<select name="userid" id="userid">
+	
+		<repeat group="{{@user_rows}}" value="{{@row}}">
+		  <option value="{{@row.id}}">{{@row.name}}</option>
+		</repeat>
+		
+	</select>
+
+	
 	<div class="control-group">
 		<div class="">
 			<input type="hidden" name="create" value="create" />
@@ -39,5 +51,6 @@
 				<i class="icon-ok icon-white"></i> Add Workshift</button>
 		</div>
 	</div>
+
 
 </form>

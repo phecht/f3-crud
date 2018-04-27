@@ -6,7 +6,6 @@ class WorkShiftController extends Controller {
 		$workshift = new Workshift( $this->db );
 		$user      = new User( $this->db );
 		$user_rows = $this->db->exec( 'select id, name FROM users' );
-
 		$this->f3->set( 'user_rows', $user_rows );
 
 		$this->f3->set( 'workshifts', $workshift->all() );
@@ -26,6 +25,9 @@ class WorkShiftController extends Controller {
 
 			$this->f3->reroute( '/wssuccess/New work shift Created' );
 		} else {
+			$user      = new User( $this->db );
+			$user_rows = $this->db->exec( 'select id, name FROM users' );
+			$this->f3->set( 'user_rows', $user_rows );
 			$this->f3->set( 'page_head', 'Create Workshift' );
 			$this->f3->set( 'view', 'workshift/create.htm' );
 			$this->f3->set( 'type', 'workshift' );
@@ -42,7 +44,7 @@ class WorkShiftController extends Controller {
 			$this->f3->reroute( '/wssuccess/Workshift Updated' );
 		} else {
 			$workshift->getById( $this->f3->get( 'PARAMS.id' ) );
-			$this->f3->set( 'user', $workshift );
+			// $this->f3->set( 'user', $workshift );
 			$this->f3->set( 'page_head', 'Update Workshift' );
 			$this->f3->set( 'view', 'workshift/update.htm' );
 			$this->f3->set( 'type', 'workshift' );
