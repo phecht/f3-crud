@@ -8,7 +8,11 @@ class WorkShiftController extends Controller {
 		$user_rows = $this->db->exec( 'select id, name FROM users' );
 		$this->f3->set( 'user_rows', $user_rows );
 
-		$this->f3->set( 'workshifts', $workshift->all() );
+		$workshiftv = $this->db->exec( 
+			'select w.id, w.startwork, w.endwork, u.name from workshifts w left join users u ON(u.id = w.userid)' );
+
+		/* 		$this->f3->set( 'workshifts', $workshift->all() ); */
+		$this->f3->set( 'workshifts', $workshiftv );
 		$this->f3->set( 'page_head', 'Workshift List' );
 		$this->f3->set( 'message', $this->f3->get( 'PARAMS.message' ) );
 		$this->f3->set( 'view', 'workshift/list.htm' );
@@ -23,7 +27,7 @@ class WorkShiftController extends Controller {
 			$workshift = new Workshift( $this->db );
 			$workshift->add();
 
-			$this->f3->reroute( '/wssuccess/New work shift Created' );
+			$this->f3->reroute( '/wssuccess/Created' );
 		} else {
 			$user      = new User( $this->db );
 			$user_rows = $this->db->exec( 'select id, name FROM users' );
@@ -41,9 +45,13 @@ class WorkShiftController extends Controller {
 
 		if ( $this->f3->exists( 'POST.update' ) ) {
 			$workshift->edit( $this->f3->get( 'POST.id' ) );
-			$this->f3->reroute( '/wssuccess/Workshift Updated' );
+			$this->f3->reroute( '/wssuccess/Updated' );
 		} else {
+			echo 'in update';
 			$workshift->getById( $this->f3->get( 'PARAMS.id' ) );
+			$user      = new User( $this->db );
+			$user_rows = $this->db->exec( 'select id, name FROM users' );
+			$this->f3->set( 'user_rows', $user_rows );
 			// $this->f3->set( 'user', $workshift );
 			$this->f3->set( 'page_head', 'Update Workshift' );
 			$this->f3->set( 'view', 'workshift/update.htm' );

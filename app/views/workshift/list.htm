@@ -13,6 +13,7 @@
 			<tr>
 				<td>{{ trim(@workshift.startwork) }}</td>
 				<td>{{ trim(@workshift.endwork) }}</td>
+				<td>{{ trim(@workshift.name) }}</td>
 				<td>
 					<a href="{{ @BASE.'/workshift/update/'. @workshift.id }}" class="btn btn-primary">
 						<i class="icon-edit icon-white"></i>Edit</a>
@@ -23,11 +24,5 @@
 			</tr>
 		</repeat>
 	</tbody>
-	<tbody>
-	<repeat group="{{ @user_rows }}" value="{{ @uservals }}">
-			<td>{{ @uservals.id }}</td>
-			<td>{{ @uservals.name }}</td>
-	</repeat>
-</tbody>
 
 </table>

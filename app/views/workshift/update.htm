@@ -1,29 +1,37 @@
 <form action="{{ @BASE.'/workshift/update' }}" method="post" class="form-horizontal">
 
-    <div class="input-prepend">
-        <span class="add-on"><i class="icon-user icon-black"></i> Start</span>
-		<input type="text" id="startwork" name="startwork" 
-			value="{{ @POST.startwork }}" class="input-xlarge" />
-    </div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="startwork">
+			<i class="icon-user icon-black"></i> Start</label>
+		<input type="text" id="startwork" name="startwork" value="{{ @POST.startwork }}" class="input-xlarge" />
+	</div>
 
-    <div class="input-prepend">
-        <span class="add-on"><i class="icon-envelope icon-black"></i> End</span>
-		<input type="text" id="endwork" name="endwork" 
-		value="{{ @POST.endwork }}" class="input-xlarge" />
-    </div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="endwork">
+			<i class="icon-envelope icon-black"></i> End</label>
+		<input type="text" id="endwork" name="endwork" value="{{ @POST.endwork }}" class="input-xlarge" />
+	</div>
 
-    <div class="input-prepend">
-        <span class="add-on"><i class="icon-envelope icon-black"></i> End</span>
-		<input type="text" id="userid" name="userid" 
-		value="{{ @POST.userid }}" class="input-xlarge" />
-    </div>
+
+	<div class="form-group">
+		<select value="{{ @POST.userid }}" name="userid" id="userid">
+
+			<repeat group="{{@user_rows}}" value="{{@row}}">
+				<option value="{{@row.id}}">{{@row.name}}</option>
+			</repeat>
+
+		</select>
+		<label class="control-label col-sm-2" for="userid">
+			<i class="icon-envelope icon-black"></i> Person</label>
+	</div>
 
 	<div class="control-group">
-        <div class="">
-            <input type="hidden" name="id" value="{{ @POST.id }}" />
-            <input type="hidden" name="update" value="update" />
-            <button type="submit" class="btn btn-primary"><i class="icon-edit icon-white"></i> Update</button>
-        </div>
-    </div>
+		<div class="">
+			<input type="hidden" name="id" value="{{ @POST.id }}" />
+			<input type="hidden" name="update" value="update" />
+			<button type="submit" class="btn btn-primary">
+				<i class="icon-edit icon-white"></i> Update</button>
+		</div>
+	</div>
 
 </form>
