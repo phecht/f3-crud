@@ -17,7 +17,15 @@
 		<select value="{{ @POST.userid }}" name="userid" id="userid">
 
 			<repeat group="{{@user_rows}}" value="{{@row}}">
-				<option value="{{@row.id}}">{{@row.name}}</option>
+				<check if="{{@row.id==@POST.userid}}">
+					<true>
+							<option value="{{@row.id}}" selected>{{@row.name}}</option>
+					</true>
+					<false>
+							<option value="{{@row.id}}">{{@row.name}}</option>
+					</false>
+
+				</check>
 			</repeat>
 
 		</select>
