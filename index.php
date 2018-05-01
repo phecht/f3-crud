@@ -23,6 +23,7 @@ if ( file_exists( '.env2' ) ) {
 	$f3->set( 'db_pass', $temp );
 	$temp = getenv( 'db_user' );
 	$f3->set( 'db_user', $temp );
+	$f3->set( 'DEBUG', 0 );
 }
 
 
