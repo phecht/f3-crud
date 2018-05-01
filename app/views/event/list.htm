@@ -5,6 +5,7 @@
 			<th scope="col">Date</th>
 			<th scope="col">Start</th>
 			<th scope="col">Duration</th>
+			<th scope="col">Display</th>
 
 		</tr>
 	</thead>
@@ -16,6 +17,7 @@
 				<td>{{ trim(@event.eventdate) }}</td>
 				<td>{{ trim(@event.starttime) }}</td>
 				<td>{{ trim(@event.duration) }}</td>
+				<td>{{ trim(@event.dashdisplay) }}</td>
 				<td>
 					<a href="{{ @BASE.'/event/update/'. @event.id }}" class="btn btn-primary">
 						<i class="icon-edit icon-white"></i> Edit</a>

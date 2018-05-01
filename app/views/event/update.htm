@@ -28,13 +28,20 @@
 		</div>
 	</div>
 
-
-    <div class="control-group">
-        <div class="">
-            <input type="hidden" name="id" value="{{ @POST.id }}" />
-            <input type="hidden" name="update" value="update" />
-            <button type="submit" class="btn btn-primary"><i class="icon-edit icon-white"></i> Update</button>
-        </div>
-    </div>
+	<div class="form-group">
+		<label class="control-label col-sm-2" for="dashdisplay">Display</label>
+		<div class="col-sm-10">
+			<input type="text" id="dashdisplay" name="dashdisplay" value="{{ @POST.dashdisplay }}" class="form-control" />
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<div class="">
+			<input type="hidden" name="id" value="{{ @POST.id }}" />
+			<input type="hidden" name="update" value="update" />
+			<button type="submit" class="btn btn-primary">
+				<i class="icon-edit icon-white"></i> Update</button>
+		</div>
+	</div>
 
 </form>
