@@ -1,0 +1,21 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>Event</th>
+			<th>Countdown</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<repeat group="{{ @dashevents }}" value="{{ @dashevent }}">
+			<tr>
+				<td scope="row">{{ @dashevent.eventname }}:</td>
+
+				<td>
+					<h4 id="elem{{@dashevent.eventname}}"></h4>
+				</td>
+
+			</tr>
+		</repeat>
+	</tbody>
+</table>
