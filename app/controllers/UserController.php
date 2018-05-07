@@ -77,7 +77,7 @@ class UserController extends Controller {
 
 		if ( $this->f3->exists( 'POST.update' ) ) {
 			$user->edit( $this->f3->get( 'POST.id' ) );
-			$this->f3->reroute( '/success/User Updated' );
+			$this->f3->reroute( '/success/UserUpdated' );
 		} else {
 			$user->getById( $this->f3->get( 'PARAMS.id' ) );
 			$this->f3->set( 'user', $user );

@@ -40,40 +40,48 @@
 </script>
 
 
-<div class="container">
-	<h2>Bar Car Dashboard</h2>
-	<table class="table table-bordered">
-		<tbody>
-			<tr>
-				<td>
-					<a href="/workshift">Schedule</a>
-				</td>
-				<td>
-					<include href="dashboard/dispevent.htm" />
-				</td>
-				<td><include href="dashboard/dispworksched.htm"/></td>
-			</tr>
-			<tr>
-				<td>Goals
-
-				</td>
-				<td>Joke:</td>
-				<td>
-					<a href="https://www.accuweather.com/en/us/denver-co/80203/weather-forecast/347810" class="aw-widget-legal">
-						<!--
-            By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
-            -->
-					</a>
-					<div id="awcc1523016745881" class="aw-widget-current" data-locationkey="" data-unit="f" data-language="en-us" data-useip="true"
-					 data-uid="awcc1523016745881"></div>
-					<script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
-				</td>
-			</tr>
-			<tr>
-				<td>86'd items</td>
-				<td>86'd peeps</td>
-				<td>trades</td>
-			</tr>
-		</tbody>
-	</table>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-3 col-lg-4 col-sm-12">
+			<a href="/workshift">Schedule</a>
+			<include href="dashboard/dispworksched.htm" />
+		</div>
+		<div class="col-3 col-lg-4">
+			<include href="dashboard/dispevent.htm" />
+		</div>
+		<div class="col-3 col-lg-4">
+			Notes
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-3 col-lg-3">
+			Goals
+		</div>
+		<div class="col-3 col-lg-3">
+			Jokes
+		</div>
+		<div class="col-3 col-lg-3">
+			<a href="https://www.accuweather.com/en/us/denver-co/80203/weather-forecast/347810" class="aw-widget-legal">
+				<!--
+		            By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+		            -->
+			</a>
+			<div id="awcc1523016745881" class="aw-widget-current" data-locationkey="" data-unit="f" data-language="en-us" data-useip="true"
+			 data-uid="awcc1523016745881"></div>
+			<script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script> </div>
+	
+	</div>
+	<div class="row">
+		<div class="col-3 col-lg-3">
+			86'd items
+		</div>
+		<div class="col-3 col-lg-3">
+			86'd people
+		</div>
+		<div class="col-3 col-lg-3">
+			Trades
+		</div>
+	
+	</div>
+	
 </div>

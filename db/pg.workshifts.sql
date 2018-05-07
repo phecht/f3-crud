@@ -28,6 +28,25 @@ create view workshift_user_vw as select w.id, w.startwork, w.endwork, w.userid, 
 	from workshifts w 
 	left join users u ON (u.id = w.userid);
 
+CREATE VIEW workshift_pre_vw as 
+select extract(month from startwork), extract(DAY from startwork) as day, 
+	extract(HOUR from startwork) as starthour, name from workshift_user_vw order by startwork;
+
+select extract(DAY from startwork) as day, extract(HOUR from startwork) as starthour, 
+	name from workshift_user_vw order by day, starthour
+
+SELECT row_name AS bardate,
+	category_1::integer AS HOUR,
+	category_2::integer AS what 
+	FROM 
+	crosstab('select extract(DAY from startwork) as day, extract(HOUR from startwork) as starthour, name from workshift_user_vw order by day, starthour', 2 ) 
+	AS ct(row_name text, category_1 text, category_2 text):
+	
+--SELECT row_name AS Section,
+--       category_1::integer AS Active,
+--       category_2::integer AS Inactive, category_3::integer AS newc
+--FROM crosstab('select section::text, status, count::text from t',3)
+--            AS ct (row_name text, category_1 text, category_2 text, category_3 text );
 
 CREATE OR REPLACE FUNCTION workshift_detail_name_vw_dml()
 RETURNS TRIGGER

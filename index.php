@@ -30,4 +30,6 @@ if ( file_exists( '.env2' ) ) {
 new Session();
 $f3->config( 'config/config.ini' );
 $f3->config( 'config/routes.ini' );
+
+$f3->set( 'dcolors', array( 'aqua', 'black', 'blue', 'fuchsia', 'gray', 'green', 'lime', 'maroon', 'navy', 'olive', 'purple', 'red', 'silver', 'teal', 'yellow' ) );
 $f3->run();

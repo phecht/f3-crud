@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 ALTER TABLE users ADD COLUMN IF NOT EXISTS position integer REFERENCES positions(id);
 ALTER TABLE users ADD COLUMN IF NOT EXISTS thepassword varchar(100);
+ALTER TABLE users ADD COLUMN IF NOT EXISTS dispcolor varchar(20);
 
 --
 -- Dumping data for table users
