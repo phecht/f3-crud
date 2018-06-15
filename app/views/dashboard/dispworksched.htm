@@ -1,48 +1,11 @@
 <!-- <div class="container"> -->
-	<div class="row">
-		<div class="col-sm-4" style="background-color:yellow;">
-			<p>Date</p>
-		</div>
-		<div class="col-sm-2" style="background-color:pink;">
-			<p>3:00</p>
-		</div>
-		<div class="col-sm-2" style="background-color:pink;">
-			<p>5:00</p>
-		</div>
-		<div class="col-sm-2" style="background-color:pink;">
-			<p>7:00</p>
-		</div>
-		<div class="col-sm-1" style="background-color:pink;">
-			<p>9:00</p>
-		</div>
-		<div class="col-sm-1" style="background-color:pink;">
-			<p>Close</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-4" style="background-color:yellow;">
-			<p>Wed 05/02/2018</p>
-		</div>
-		<div class="col-sm-7" style="background-color:red;">
-			<p>Bill</p>
-		</div>
-		<div class="col-sm-1" style="background-color:pink;">
-			<p>Close</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-4" style="background-color:yellow;">
-			<p>Thu 05/03/2018</p>
-		</div>
-		<div class="col-sm-3" style="background-color:green;">
-			<p>Cora</p>
-		</div>
-		<div class="col-sm-4" style="background-color:blue;">
-			<p>Tori</p>
-		</div>
-		<div class="col-sm-1" style="background-color:pink;">
-			<p>Close</p>
-		</div>
-	</div>
 
-<!-- </div> -->
+	<!-- dow as dayofw, wname, starthour, startAMPM, endhour, endAMPM-->
+	<repeat group="{{ @dashworks }}" value="{{ @workshift }}">
+		<div class="row">
+			<div class="col-sm-12">
+				<p>{{ trim(@workshift) }}</p>
+			</div>
+		</div>
+	</repeat>
+			
