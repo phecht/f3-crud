@@ -7,6 +7,17 @@ CREATE TABLE IF NOT EXISTS workshifts (
   USERID INTEGER REFERENCES USERS(ID)
 )  ;
 
+CREATE TABLE IF NOT EXISTS locs (
+	id serial PRIMARY KEY,
+	locname CHAR(32)
+);
+
+INSERT INTO locs (locname) VALUES ('Barcar'), ('BCKitchen'), ('TheOwl');
+
+
+ALTER TABLE workshifts ADD COLUMN IF NOT EXISTS shiftloc integer REFERENCES locs(id);
+
+
 --
 -- Dumping data for table workshifts
 --
@@ -23,17 +34,44 @@ INSERT INTO workshifts (STARTWORK, ENDWORK, USERID) VALUES
 -- CREATE TABLE person_job(pid NUMERIC PRIMARY KEY references person_detail(pid), 
 -- job TEXT);
 
+
+select w.id, w.startwork, w.endwork, u.name, l.locname from workshifts w 
+left join users u ON(u.id = w.userid) 
+left join locs l ON (l.id = w.shiftloc) order by w.startwork;
+
 drop view workshift_user_vw;
 create view workshift_user_vw as select w.id, w.startwork, w.endwork, w.userid, u.name 
 	from workshifts w 
 	left join users u ON (u.id = w.userid);
 
+DROP VIEW workshift_pre_vw;
 CREATE VIEW workshift_pre_vw as 
-select extract(month from startwork), extract(DAY from startwork) as day, 
+select extract(month from startwork) AS month, extract(DAY from startwork) as day, 
 	extract(HOUR from startwork) as starthour, name from workshift_user_vw order by startwork;
+
+SELECT * FROM crosstab
+(
+	'SELECT day, starthour, name FROM workshift_pre_vw',
+	'SELECT DISTINCT starthour FROM workshift_pre_vw ORDER BY 1'
+)
+AS
+(
+	day text,
+	H13 text,
+	H15 TEXT,
+	H18 TEXT,
+	H21 TEXT
+);
 
 select extract(DAY from startwork) as day, extract(HOUR from startwork) as starthour, 
 	name from workshift_user_vw order by day, starthour
+
+SELECT * FROM crosstab(
+  $$ select  EXTRACT( hour FROM startwork) as hour, EXTRACT( day FROM startwork) as day, user from workshift_user_vw order by day, hour $$,
+  $$ SELECT m FROM generate_series(1,12) m $$
+) AS (
+  name CHAR(20), "Jan" int, "Feb" int, "Mar" int, "Apr" int, "May" int, "Jun" int, "Jul" int, "Aug" int, "Sep" int, "Oct" int, "Nov" int, "Dec" int
+);
 
 SELECT row_name AS bardate,
 	category_1::integer AS HOUR,

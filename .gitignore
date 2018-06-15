@@ -165,4 +165,6 @@ pip-log.txt
 /vendor/
 .env2
 psqlhistory
+db/pg.jokes.sql
+
 
