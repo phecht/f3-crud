@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9597f792420b7dc3c7b832e1aebd9078",
+    "content-hash": "3684f9aa9f1af13113a780e1d3adcdc8",
     "packages": [
         {
             "name": "bcosca/fatfree",
@@ -144,16 +144,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.56",
+            "version": "v0.63",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client-services.git",
-                "reference": "94ae125bd4ac33eec676142f7776c0b137cf7bc7"
+                "reference": "a009a33246e90bf1f60f745f8e47039ac5a87fdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/94ae125bd4ac33eec676142f7776c0b137cf7bc7",
-                "reference": "94ae125bd4ac33eec676142f7776c0b137cf7bc7",
+                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/a009a33246e90bf1f60f745f8e47039ac5a87fdf",
+                "reference": "a009a33246e90bf1f60f745f8e47039ac5a87fdf",
                 "shasum": ""
             },
             "require": {
@@ -177,7 +177,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2018-04-21T00:23:45+00:00"
+            "time": "2018-06-07T00:22:54+00:00"
         },
         {
             "name": "google/auth",
@@ -409,16 +409,16 @@
         },
         {
             "name": "ikkez/f3-cortex",
-            "version": "v1.5.0",
+            "version": "v1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ikkez/f3-cortex.git",
-                "reference": "2cd1712eeae33c9d05716e8a1d8e3796f0ea4016"
+                "reference": "c5a481070271b31fb5b4537b18fee9fc28cbcd88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ikkez/f3-cortex/zipball/2cd1712eeae33c9d05716e8a1d8e3796f0ea4016",
-                "reference": "2cd1712eeae33c9d05716e8a1d8e3796f0ea4016",
+                "url": "https://api.github.com/repos/ikkez/f3-cortex/zipball/c5a481070271b31fb5b4537b18fee9fc28cbcd88",
+                "reference": "c5a481070271b31fb5b4537b18fee9fc28cbcd88",
                 "shasum": ""
             },
             "require": {
@@ -443,20 +443,56 @@
                 "orm",
                 "sql"
             ],
-            "time": "2017-06-30T13:23:09+00:00"
+            "time": "2018-04-25T10:51:45+00:00"
         },
         {
-            "name": "ikkez/f3-schema-builder",
-            "version": "v2.2.2",
+            "name": "ikkez/f3-opauth",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ikkez/f3-schema-builder.git",
-                "reference": "f829a91944ab8c6f142b08d71447b356bb943a0b"
+                "url": "https://github.com/ikkez/f3-opauth.git",
+                "reference": "6a6657c0e119e776333625a53404641cb376dffc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ikkez/f3-schema-builder/zipball/f829a91944ab8c6f142b08d71447b356bb943a0b",
-                "reference": "f829a91944ab8c6f142b08d71447b356bb943a0b",
+                "url": "https://api.github.com/repos/ikkez/f3-opauth/zipball/6a6657c0e119e776333625a53404641cb376dffc",
+                "reference": "6a6657c0e119e776333625a53404641cb376dffc",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/opauth/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "description": "Opauth Plugin for PHP Fat-Free Framework",
+            "homepage": "https://github.com/ikkez/f3-opauth",
+            "keywords": [
+                "Authentication",
+                "F3",
+                "OPAuth",
+                "auth",
+                "fatfree",
+                "oauth"
+            ],
+            "time": "2018-06-04T14:45:55+00:00"
+        },
+        {
+            "name": "ikkez/f3-schema-builder",
+            "version": "v2.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ikkez/f3-schema-builder.git",
+                "reference": "42d8f3f0a117dce29ab3fe30ef46fafb419224e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ikkez/f3-schema-builder/zipball/42d8f3f0a117dce29ab3fe30ef46fafb419224e3",
+                "reference": "42d8f3f0a117dce29ab3fe30ef46fafb419224e3",
                 "shasum": ""
             },
             "type": "library",
@@ -476,7 +512,7 @@
                 "fatfree",
                 "sql"
             ],
-            "time": "2018-03-06T13:27:23+00:00"
+            "time": "2018-05-15T13:03:21+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -793,16 +829,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.2.3",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "4842476c434e375f9d3182ff7b89059583aa8b27"
+                "reference": "d86873af43b4aa9d1f39a3601cc0cfcf02b25266"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/4842476c434e375f9d3182ff7b89059583aa8b27",
-                "reference": "4842476c434e375f9d3182ff7b89059583aa8b27",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d86873af43b4aa9d1f39a3601cc0cfcf02b25266",
+                "reference": "d86873af43b4aa9d1f39a3601cc0cfcf02b25266",
                 "shasum": ""
             },
             "require": {
@@ -840,7 +876,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2018-02-20T21:35:23+00:00"
+            "time": "2018-06-06T23:58:19+00:00"
         },
         {
             "name": "twbs/bootstrap",
@@ -897,7 +933,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ikkez/f3-opauth": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
