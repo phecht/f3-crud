@@ -12,6 +12,24 @@
 require 'vendor/autoload.php';
 $f3 = Base::instance();
 
+$f3->config( 'vendor/ikkez/f3-opauth/lib/opauth/opauth.ini', TRUE );
+
+$opauth = OpauthBridge::instance( $f3->opauth );
+
+$opauth->onSuccess( function( $data ) {
+	header( 'Content-Type: text' );
+	echo 'User successfully authenticated.' . "\n";
+	print_r( $data['info'] );
+});
+
+// define error handler
+$opauth->onAbort( function( $data ) {
+	header( 'Content-Type: text' );
+	echo 'Auth request was canceled.' . "\n";
+	print_r( $data );
+});
+
+
 if ( file_exists( '.env2' ) ) {
 	$f3->config( '.env2' );
 } else {
