@@ -8,10 +8,10 @@
     </thead>
 
     <tbody>
-    <repeat group="{{ @dates }}" value="{{ @date }}">
+    <repeat group="{{ @positions }}" value="{{ @position }}">
         <tr>
-            <td>{{ trim(@date.datename) }}</td>
-            <td>{{ trim(@date.workdate) }}</td>
+            <!-- <td>{{ trim(@position.id) }}</td> -->
+            <td>{{ trim(@position.name) }}</td>
             <td><a href="{{ @BASE.'/position/update/'. @position.id }}" class="btn btn-primary">
                 <i class="icon-edit icon-white"></i> Edit</a>
                 &nbsp; <a href="{{ @BASE.'/position/delete/'. @position.id }}" class="btn btn-danger">

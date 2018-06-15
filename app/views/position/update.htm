@@ -1,16 +1,9 @@
-<form action="{{ @BASE.'/date/update' }}" method="post" class="form-horizontal">
+<form action="{{ @BASE.'/position/update' }}" method="post" class="form-horizontal">
 
     <div class="input-prepend">
-        <span class="add-on"><i class="icon-user icon-black"></i> Name</span>
-        <input type="text" id="datename" name="datename" value="{{ @POST.datename }}" class="input-xlarge" />
+        <span class="add-on"><i class="icon-user icon-black"></i>Pos Name</span>
+        <input type="text" id="name" name="name" value="{{ @POST.name }}" class="input-xlarge" />
     </div><br/><br/>
-
-    <div class="input-prepend">
-        <span class="add-on"><i class="icon-envelope icon-black"></i> Email</span>
-        <input type="text" id="workdate" name="workdate" value="{{ @POST.workdate }}" class="input-xlarge" />
-    </div>
-    <br/><br/>
-
 
 
     <div class="control-group">

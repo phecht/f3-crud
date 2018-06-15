@@ -3,7 +3,7 @@
 class Position extends DB\SQL\Mapper {
 
 	public function __construct( DB\SQL $db ) {
-		parent::__construct( $db, 'position' );
+		parent::__construct( $db, 'positions' );
 	}
 
 	public function all() {
