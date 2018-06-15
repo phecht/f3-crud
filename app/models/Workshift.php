@@ -31,4 +31,9 @@ class Workshift extends DB\SQL\Mapper {
 		$this->load( array( 'id=?', $id ) );
 		$this->erase();
 	}
+
+	public function wscopy( $id ) {
+		$this->copyFrom( array( 'id=?', $id ) );
+		$this->save();
+	}
 }
