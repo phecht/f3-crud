@@ -4,6 +4,7 @@
 			<th scope="col">Start time</th>
 			<th scope="col">End time</th>
 			<th scope="col">User</th>
+			<th scope="col">Location</th>
 
 		</tr>
 	</thead>
@@ -14,9 +15,13 @@
 				<td>{{ trim(@workshift.startwork) }}</td>
 				<td>{{ trim(@workshift.endwork) }}</td>
 				<td>{{ trim(@workshift.name) }}</td>
+				<td>{{ trim(@workshift.locname) }}</td>
+				
 				<td>
 					<a href="{{ @BASE.'/workshift/update/'. @workshift.id }}" class="btn btn-primary">
 						<i class="icon-edit icon-white"></i>Edit</a>
+					<a href="{{ @BASE.'/workshift/copy/'. @workshift.id }}" class="btn btn-primary">
+						<i class="icon-plus icon-blue"></i>Copy</a>
 					<a href="{{ @BASE.'/workshift/delete/'. @workshift.id }}" class="btn btn-danger">
 						<i class="icon-remove icon-white"></i>Delete</a>
 				</td>
@@ -26,3 +31,4 @@
 	</tbody>
 
 </table>
+
