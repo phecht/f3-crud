@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-sm-4">
+		<p>Date</p>
+	</div>
+	<div class="col-sm-8">
+		<p>Note</p>
+	</div>
+</div>
+
+<!-- .col-xs-12 .col-sm-6 .col-lg-8 -->
+
+<repeat group="{{ @bcnotes }}" value="{{ @bcnote }}">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-lg-4">
+			<p>{{ trim(@bcnote.datenote) }}</p>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-lg-4">
+			<p>{{ trim(@bcnote.textnote) }}</p>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-lg-4">
+			<a href="{{ @BASE.'/bcnote/update/'. @bcnote.id }}" class="btn btn-primary">
+				<i class="icon-edit icon-white"></i> Edit</a>
+			&nbsp;
+			<a href="{{ @BASE.'/bcnote/delete/'. @bcnote.id }}" class="btn btn-danger">
+				<i class="icon-remove icon-white"></i>
+				Delete</a>
+		</div>
+	</div>
+</repeat>

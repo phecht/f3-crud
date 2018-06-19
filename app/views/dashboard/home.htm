@@ -1,3 +1,18 @@
+<style type="text/css">
+	body {
+	  padding-top: 20px;
+	  padding-bottom: 40px;
+	}
+
+	.container {
+	  width: 420px;
+	}
+
+	div.row {
+	  border: 1px solid;
+	}
+
+  </style>
 <script>
 	// Set the date we're counting down to
 	<repeat group="{{ @dashevents }}" value="{{ @dashevent }}">
@@ -51,6 +66,15 @@
 		</div>
 		<div class="col-3 col-lg-4">
 			Notes
+			<include href="bcnote/dashlist.htm"/>
+			<style type="text/css">
+
+				div.row {
+				 border: 0px;
+			   }
+			
+			 </style>
+			
 		</div>
 	</div>
 	<div class="row">
