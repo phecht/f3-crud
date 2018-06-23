@@ -41,7 +41,14 @@ if ( file_exists( '.env2' ) ) {
 	$f3->set( 'db_pass', $temp );
 	$temp = getenv( 'db_user' );
 	$f3->set( 'db_user', $temp );
+
+	$f3->set( 'bc_dns',  getenv( 'bc_dns' ) );
+	$f3->set( 'bc_name', getenv( 'bc_name' ) );
+	$f3->set( 'bc_pass', getenv( 'bc_pass' ) );
+	$f3->set( 'bc_user', getenv( 'bc_user' ) );
+
 	$f3->set( 'DEBUG', 0 );
+
 }
 
 

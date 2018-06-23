@@ -1,0 +1,25 @@
+<table width="600" cellpadding="5" class="table table-hover table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">Net sales</th>
+        <th scope="col">DateOf</th>
+  
+    </tr>
+    </thead>
+
+    <tbody>
+    <repeat group="{{ @testdatas }}" value="{{ @testdata }}">
+        <tr>
+            <td>{{ trim( @testdata.NetSales) }}</td>
+            <td>{{ trim(@testdata.DateOfEntry) }}</td>
+ <!--            <td><a href="{{ @BASE.'/date/update/'. @date.id }}" class="btn btn-primary">
+                <i class="icon-edit icon-white"></i> Edit</a>
+                &nbsp; <a href="{{ @BASE.'/date/delete/'. @date.id }}" class="btn btn-danger">
+                    <i class="icon-remove icon-white"></i>
+                    Delete</a></td>
+ -->
+        </tr>
+    </repeat>
+    </tbody>
+
+</table>
