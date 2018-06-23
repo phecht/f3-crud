@@ -163,7 +163,7 @@ pip-log.txt
 .DS_Store
 
 /vendor/
-.env2
+.env2*
 psqlhistory
 db/pg.jokes.sql
 
