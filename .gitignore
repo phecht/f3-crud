@@ -1,4 +1,4 @@
-.env
+
 #################
 ## Eclipse
 #################
@@ -163,7 +163,7 @@ pip-log.txt
 .DS_Store
 
 /vendor/
-.env2
+.env*
 psqlhistory
 db/pg.jokes.sql
 
