@@ -4,11 +4,11 @@ class BcNotesController extends Controller {
 
 	function __construct() {
 		parent::__construct();
-		$bcnote = new BCnote( $this->db );
+		$bcnote = new BCnote( $this->db2bc );
 	}
 
 	public function index() {
-		$bcnote = new BCnote( $this->db );
+		$bcnote = new BCnote( $this->db2bc );
 		$this->f3->set( 'bcnotes', $bcnote->all() );
 		$this->f3->set( 'page_head', 'Notes List' );
 		$this->f3->set( 'message', $this->f3->get( 'PARAMS.message' ) );

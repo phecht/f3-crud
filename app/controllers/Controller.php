@@ -39,6 +39,13 @@ class Controller {
 			$f3->get( 'bc_pass' )
 		);
 
+		$db2bc = new DB\SQL(
+			$f3->get( 'bc2_dns' ) . $f3->get( 'bc2_name' ),
+			$f3->get( 'bc2_user' ),
+			$f3->get( 'bc2_pass' )
+		);
+		$this->db2bc = $db2bc;
+
 		$this->f3 = $f3;
 		$this->db = $db;
 		$this->dbbc = $dbbc;

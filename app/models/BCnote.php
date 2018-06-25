@@ -2,8 +2,8 @@
 
 class BCnote extends DB\SQL\Mapper {
 
-	public function __construct( DB\SQL $db ) {
-		parent::__construct( $db, 'bcnotes' );
+	public function __construct( DB\SQL $db2bc ) {
+		parent::__construct( $db2bc, 'bcd_notes' );
 	}
 
 	public function all() {
