@@ -19,3 +19,7 @@ To create a new CRUD for a table:
 6. Added needed links to newheader2.htm
 7. Create a dashlist.htm for use in the dashboard.
 
+Use of git-ftp
+1. I had to download the latest version, so far of git-ftp.
+2. Or I set the path to /usr/bin/curl instead of the /home/peter/anaconda3/bin
+
