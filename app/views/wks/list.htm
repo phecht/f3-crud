@@ -1,0 +1,53 @@
+
+
+<div class="row">
+	<div class="col-sm-2">
+		<p>Dow</p>
+	</div>
+	<div class="col-sm-2">
+		<p>wname</p>
+	</div>
+	<div class="col-sm-2">
+		<p>Start Hour</p>
+	</div>
+	<div class="col-sm-2">
+		<p>startAMPM</p>
+	</div>
+	<div class="col-sm-2">
+		<p>End Hour</p>
+	</div>
+	<div class="col-sm-2">
+		<p>endAMPM</p>
+	</div>
+</div>
+
+<repeat group="{{ @wkss }}" value="{{ @wks }}">
+	<div class="row">
+		<div class="col-xs-2">
+			<p>{{ trim(@wks.dow) }}</p>
+		</div>
+		<div class="col-xs-2">
+			<p>{{ trim(@wks.wname) }}</p>
+		</div>
+		<div class="col-xs-2">
+			<p>{{ trim(@wks.starthour) }}</p>
+		</div>
+		<div class="col-xs-2">
+			<p>{{ trim(@wks.startampm) }}</p>
+		</div>
+		<div class="col-xs-2">
+			<p>{{ trim(@wks.endhour) }}</p>
+		</div>
+		<div class="col-xs-2">
+			<p>{{ trim(@wks.endampm) }}</p>
+		</div>
+		<div class="col-xs-2">
+			<a href="{{ @BASE.'/wks/update/'. @wks.id }}" class="btn btn-primary">
+				<i class="icon-edit icon-white"></i> Edit</a>
+			&nbsp;
+			<a href="{{ @BASE.'/wks/delete/'. @wks.id }}" class="btn btn-danger">
+				<i class="icon-remove icon-white"></i>
+				Delete</a>
+		</div>
+	</div>
+</repeat>
