@@ -21,10 +21,14 @@ class TestDBController extends Controller {
 		$this->f3->set( 'type', 'test' );
 	}
 
+	public function bsindex() {
+		$template = new Template;
+		echo $template->render('bs4.html');
+	}
 	/**
 	 * Create a new note
 	 */
-	public function create() {
+/* 	public function create() {
 		if ( $this->f3->exists( 'POST.create' ) ) {
 			$bcnote->add();
 
@@ -60,5 +64,5 @@ class TestDBController extends Controller {
 		}
 
 		$this->f3->reroute( '/bcnsuccess/Date Deleted' );
-	}
+	} */
 }
