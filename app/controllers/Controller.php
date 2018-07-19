@@ -4,6 +4,7 @@ class Controller {
 
 	protected $f3;
 	protected $db;
+	protected $dbbc;
 
 	function beforeroute() {
 
@@ -43,5 +44,16 @@ class Controller {
 		$this->db = $db;
 		$this->dbbc = $dbbc;
 		
+	}
+
+	public function comboView() {
+		$bcgoal = new BCgoal( $this->db );
+		$bcdaily = new BCdaily( $this->dbbc );
+
+		$niceViewA = $bcgoal->niceView();
+		$actualNet = $bcdaily->last7();
+	
+		$niceView2 = array_replace_recursive( $niceViewA, $actualNet );
+		return $niceView2;
 	}
 }

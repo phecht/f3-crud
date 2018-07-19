@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-sm-4">
+		<p>Day</p>
+	</div>
+	<div class="col-sm-4">
+		<p>Goal</p>
+	</div>
+	<div class="col-sm-4">
+		<p>Actual</p>
+	</div>
+</div>
+
+
+
+<repeat group="{{ @bcgoal2 }}" value="{{ @bcgoal }}">
+	<div class="row">
+		<div class="col-xs-12 col-sm-4 col-lg-4">
+			<p>{{ trim(@bcgoal.dow) }}</p>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-lg-4">
+			<p>{{ trim(@bcgoal.goalamount) }}</p>
+		</div>
+		<div class="col-xs-12 col-sm-4 col-lg-4">
+			<p>{{ trim(@bcgoal.NetSales) }}</p>
+		</div>
+
+	</div>
+</repeat>
+

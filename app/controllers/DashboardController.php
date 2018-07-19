@@ -33,9 +33,15 @@ class DashboardController extends Controller {
 		$this->f3->set( 'dashworks', $weekdays );
 		$bcnote = new BCnote( $this->db );
 		$this->f3->set( 'bcnotes', $bcnote->all() );
+		$bcgoal = new BCgoal( $this-> db );
+		$this->f3->set( 'bcgoals', $bcgoal->niceView());
+		$bcdaily = new BCdaily( $this->dbbc);
+		$niceView2 = $this->comboView();
+		$this->f3->set( 'bcgoal2', $niceView2 );
 		
 
 	}
+
 
 
 

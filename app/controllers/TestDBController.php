@@ -12,7 +12,7 @@ class TestDBController extends Controller {
 		// $this->f3->set( 'testdb', $testDB->all() );
 		
 		$testdata = $this->dbbc->exec(
-			'select DateOfEntry, NetSales from barcarresults LIMIT 50;');
+			'select DateOfEntry, NetSales from barcarresults ORDER BY DateOfEntry DESC LIMIT 7;');
 
 		$this->f3->set( 'testdatas', $testdata);
 		$this->f3->set( 'page_head', 'Test List' );

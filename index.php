@@ -12,7 +12,7 @@
 require 'vendor/autoload.php';
 $f3 = Base::instance();
 
-$f3->config( 'vendor/ikkez/f3-opauth/lib/opauth/opauth.ini', TRUE );
+/* $f3->config( 'vendor/ikkez/f3-opauth/lib/opauth/opauth.ini', TRUE );
 
 $opauth = OpauthBridge::instance( $f3->opauth );
 
@@ -22,13 +22,12 @@ $opauth->onSuccess( function( $data ) {
 	print_r( $data['info'] );
 });
 
-// define error handler
 $opauth->onAbort( function( $data ) {
 	header( 'Content-Type: text' );
 	echo 'Auth request was canceled.' . "\n";
 	print_r( $data );
 });
-
+ */
 $f3->config( 'config/config.ini' );
 $f3->config( 'config/routes.ini' );
 
