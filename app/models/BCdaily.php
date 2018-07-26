@@ -11,7 +11,9 @@ class BCdaily extends DB\SQL\Mapper {
 	public function last7() {
 		// $this->load();
 		$last7 = $this->db->exec(
-			'select Dayname( DateOfEntry ) as dow, NetSales from barcarresults ORDER BY DateOfEntry DESC LIMIT 7;');
+			'select Dayname( DateOfEntry ) as dow, NetSales, ' . 
+			' ClosingBarTender, OtherBartenders' .
+			' from barcarresults ORDER BY DateOfEntry DESC LIMIT 7;');
 		return $last7;
 	}
 /* 

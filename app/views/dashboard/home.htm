@@ -1,13 +1,68 @@
 <style type="text/css">
-	body {
-	  padding-top: 20px;
-	  padding-bottom: 40px;
+body {
+  margin: 40px;
+}
+
+.subgrid1 {
+ 	display: grid;
+	 grid-template-columns: auto auto auto auto;
+	 /* grid-template-columns: repeat(3
+		minmax(200px, 1fr)); */
+ 	/* grid-template-columns: repeat(auto-fit
+		minmax(300px, 1fr)); */
+	/* grid-template-columns: 300px 300px 300px;	
+	grid-template-rows: 300px 300px 300px; */
+	grid-gap: 1px;
+	background-color: rgb(245, 236, 236);
+	color: #444;
+}
+.goalmet {
+	color:green;
+}
+.goalnotmet {
+	color:red;
+}
+.wrapper {
+ 	display: grid;
+	 grid-template-columns: auto auto auto;
+	 /* grid-template-columns: repeat(3
+		minmax(200px, 1fr)); */
+ 	/* grid-template-columns: repeat(auto-fit
+		minmax(300px, 1fr)); */
+	/* grid-template-columns: 300px 300px 300px;	
+	grid-template-rows: 300px 300px 300px; */
+	grid-gap: 10px;
+	background-color: rgb(128, 38, 38);
+	color: #444;
+}
+
+.box {
+  background-color: rgb(27, 58, 126);
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  /* font-size: 150%; */
+}
+
+	.a {
+		grid-column: 1 ;
+
 	}
 
-	.container {
-	  width: 420px;
+	.b {
+		grid-column: 2;
+		grid-row: 1 / span 1;
 	}
 
+	.c {
+		grid-column: 3;
+		grid-row: 1 / span 1;
+	}
+
+	.d {
+		grid-column: 1;
+		grid-row: 2 / span 1;
+	}
 	div.row {
 	  border: 1px solid;
 	}
@@ -55,58 +110,47 @@
 </script>
 
 
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-3 col-lg-4 col-sm-12">
-			<a href="/workshift">Schedule</a>
-			<include href="dashboard/dispworksched.htm" />
-		</div>
-		<div class="col-3 col-lg-4">
-			<include href="dashboard/dispevent.htm" />
-		</div>
-		<div class="col-3 col-lg-4">
-			Notes
-			<include href="bcnote/dashlist.htm"/>
-			<style type="text/css">
+<div class="wrapper">
+	<div class="box a">
+		<a href="/workshift">Schedule</a>
+		<include href="dashboard/dispworksched.htm" />
+	</div>
+	<div class="box b">
+		<include href="dashboard/dispevent.htm" />
+	</div>
+	<div class="box c">
+		Notes
+		<include href="bcnote/dashlist.htm"/>			
+	</div>
 
-				div.row {
-				 border: 0px;
-			   }
-			
-			 </style>
-			
-		</div>
+	<div class="box d">
+		Goals
+		<include href="bcgoal/list.htm"/>
 	</div>
-	<div class="row">
-		<div class="col-3 col-lg-3">
-			Goals
-			<include href="bcgoal/list.htm"/>
-		</div>
-		<div class="col-3 col-lg-3">
-			Jokes
-		</div>
-		<div class="col-3 col-lg-3">
-			<a href="https://www.accuweather.com/en/us/denver-co/80203/weather-forecast/347810" class="aw-widget-legal">
-				<!--
-		            By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
-		            -->
-			</a>
-			<div id="awcc1523016745881" class="aw-widget-current" data-locationkey="" data-unit="f" data-language="en-us" data-useip="true"
-			 data-uid="awcc1523016745881"></div>
-			<script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script> </div>
+	<div class="box">
+		Jokes
+	</div>
+	<div class="box">
+		<a href="https://www.accuweather.com/en/us/denver-co/80203/weather-forecast/347810" class="aw-widget-legal">
+			<!--
+	            By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+	            -->
+		</a>
+		<div id="awcc1523016745881" class="aw-widget-current" data-locationkey="" data-unit="f" data-language="en-us" data-useip="true"
+		 data-uid="awcc1523016745881"></div>
+		<script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script> 
+	</div>
 	
+
+	<div class="box">
+		86'd items
 	</div>
-	<div class="row">
-		<div class="col-3 col-lg-3">
-			86'd items
-		</div>
-		<div class="col-3 col-lg-3">
-			86'd people
-		</div>
-		<div class="col-3 col-lg-3">
-			Trades
-		</div>
+	<div class="box">
+		86'd people
+	</div>
+	<div class="box">
+		Trades
+	</div>
 	
-	</div>
 	
 </div>

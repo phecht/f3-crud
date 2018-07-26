@@ -46,6 +46,13 @@ class Controller {
 		
 	}
 
+	/**
+	*	Create a common array from the goals and daily tables into one. 
+	*	Uses the array_replace_recursive to match everything on Day Of Week
+	*	Then returns an array
+	*	@return array
+	*	@param 
+	**/
 	public function comboView() {
 		$bcgoal = new BCgoal( $this->db );
 		$bcdaily = new BCdaily( $this->dbbc );

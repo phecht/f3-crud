@@ -38,6 +38,7 @@ class DashboardController extends Controller {
 		$bcdaily = new BCdaily( $this->dbbc);
 		$niceView2 = $this->comboView();
 		$this->f3->set( 'bcgoal2', $niceView2 );
+		//print_r( $niceView2 );
 		
 
 	}
