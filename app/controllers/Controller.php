@@ -69,7 +69,8 @@ class Controller
         foreach ($actualNet as $key => $value) {
             foreach ($niceViewA as $v) {
                 if ($value['dow'] == $v['dow']) {
-                    $result[$value['dow']] = array_merge($value, ['goalamount' => $v['goalamount']]);
+                    $result[$value['dow']] 
+                        = array_merge($value, ['goalamount' => $v['goalamount']]);
                 }
             }
         }
