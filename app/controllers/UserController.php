@@ -2,100 +2,100 @@
 
 class UserController extends Controller {
 
-	function render() {
+    function render() {
 
-		$template = new Template;
-		echo $template->render( 'login.htm' );
-	}
+        $template = new Template;
+        echo $template->render( 'login.htm' );
+    }
 
-	function beforeroute() {
-	}
+    function beforeroute() {
+    }
 
-	/**
-	 * Overwrite parent afterroute to avoid the login page
-	 * looking bad.
-	 */
-	function afterroute() {
+    /**
+     * Overwrite parent afterroute to avoid the login page
+     * looking bad.
+     */
+    function afterroute() {
 
-	}
+    }
 
-	function authenticate() {
+    function authenticate() {
 
-		$useremail = $this->f3->get( 'POST.useremail' );
-		$password  = $this->f3->get( 'POST.password' );
+        $useremail = $this->f3->get( 'POST.useremail' );
+        $password  = $this->f3->get( 'POST.password' );
 
-		$user = new User( $this->db );
-		$user->getByEmail( $useremail );
+        $user = new User( $this->db );
+        $user->getByEmail( $useremail );
 
-		if ( $user->dry() ) {
-			$this->f3->reroute( '/login' );
-		}
+        if ( $user->dry() ) {
+            $this->f3->reroute( '/login' );
+        }
 
-		if ( password_verify( $password, $user->thepassword ) ) {
-			$this->f3->set( 'SESSION.user', $user->email );
-			$this->f3->reroute( '/' );
-		} else {
-			$this->f3->reroute( '/login' );
-		}
-	}
+        if ( password_verify( $password, $user->thepassword ) ) {
+            $this->f3->set( 'SESSION.user', $user->email );
+            $this->f3->reroute( '/' );
+        } else {
+            $this->f3->reroute( '/login' );
+        }
+    }
 
-	public function logout() {
-		$this->f3->set( 'SESSION.user', '' );
-		echo 'logout';
-		$this->f3->reroute( '/login' );
-	}
+    public function logout() {
+        $this->f3->set( 'SESSION.user', '' );
+        echo 'logout';
+        $this->f3->reroute( '/login' );
+    }
 
-	public function index() {
-		$user = new User( $this->db );
-		$this->f3->set( 'users', $user->all() );
-		$this->f3->set( 'page_head', 'Employee List' );
-		$this->f3->set( 'message', $this->f3->get( 'PARAMS.message' ) );
-		$this->f3->set( 'view', 'user/list.htm' );
-		$this->f3->set( 'type', 'user' );
-		// Need to call parent afterroute, but since it is one line
-		// what can go wrong?
-		echo Template::instance()->render( 'layout.htm' );
-	}
+    public function index() {
+        $user = new User( $this->db );
+        $this->f3->set( 'users', $user->all() );
+        $this->f3->set( 'page_head', 'Employee List' );
+        $this->f3->set( 'message', $this->f3->get( 'PARAMS.message' ) );
+        $this->f3->set( 'view', 'user/list.htm' );
+        $this->f3->set( 'type', 'user' );
+        // Need to call parent afterroute, but since it is one line
+        // what can go wrong?
+        echo Template::instance()->render( 'layout.htm' );
+    }
 
-	public function create() {
-		if ( $this->f3->exists( 'POST.create' ) ) {
-			$user = new User( $this->db );
-			$user->add();
+    public function create() {
+        if ( $this->f3->exists( 'POST.create' ) ) {
+            $user = new User( $this->db );
+            $user->add();
 
-			$this->f3->reroute( '/success/New User Created' );
-		} else {
-			$this->f3->set( 'page_head', 'Create User' );
-			$this->f3->set( 'view', 'user/create.htm' );
-			$this->f3->set( 'type', 'user' );
-			echo Template::instance()->render( 'layout.htm' );
-		}
+            $this->f3->reroute( '/success/New User Created' );
+        } else {
+            $this->f3->set( 'page_head', 'Create User' );
+            $this->f3->set( 'view', 'user/create.htm' );
+            $this->f3->set( 'type', 'user' );
+            echo Template::instance()->render( 'layout.htm' );
+        }
 
-	}
+    }
 
-	public function update() {
+    public function update() {
 
-		$user = new User( $this->db );
+        $user = new User( $this->db );
 
-		if ( $this->f3->exists( 'POST.update' ) ) {
-			$user->edit( $this->f3->get( 'POST.id' ) );
-			$this->f3->reroute( '/success/UserUpdated' );
-		} else {
-			$user->getById( $this->f3->get( 'PARAMS.id' ) );
-			$this->f3->set( 'user', $user );
-			$this->f3->set( 'page_head', 'Update User' );
-			$this->f3->set( 'view', 'user/update.htm' );
-			$this->f3->set( 'type', 'user' );
-			echo Template::instance()->render( 'layout.htm' );
-		}
+        if ( $this->f3->exists( 'POST.update' ) ) {
+            $user->edit( $this->f3->get( 'POST.id' ) );
+            $this->f3->reroute( '/success/UserUpdated' );
+        } else {
+            $user->getById( $this->f3->get( 'PARAMS.id' ) );
+            $this->f3->set( 'user', $user );
+            $this->f3->set( 'page_head', 'Update User' );
+            $this->f3->set( 'view', 'user/update.htm' );
+            $this->f3->set( 'type', 'user' );
+            echo Template::instance()->render( 'layout.htm' );
+        }
 
-	}
+    }
 
-	public function delete() {
-		if ( $this->f3->exists( 'PARAMS.id' ) ) {
-			$user = new User( $this->db );
-			$user->delete( $this->f3->get( 'PARAMS.id' ) );
-		}
+    public function delete() {
+        if ( $this->f3->exists( 'PARAMS.id' ) ) {
+            $user = new User( $this->db );
+            $user->delete( $this->f3->get( 'PARAMS.id' ) );
+        }
 
-		$this->f3->reroute( '/success/User Deleted' );
-	}
+        $this->f3->reroute( '/success/User Deleted' );
+    }
 }
