@@ -1,17 +1,19 @@
 <div class="subgrid1">
-		<div class="box">
-				<p>Day</p>
-		</div>
-		<div class="box">
-				<p>Goal</p>
-		</div>
-		<div class="box">
-			<p>Actual</p>
-		</div>
-		<div class="box">
-				<p>Closing</p>
-			</div>	
-
+	<div class="box">
+		<p>Day</p>
+	</div>
+	<div class="box">
+		<p>Goal</p>
+	</div>
+	<div class="box">
+		<p>Actual</p>
+	</div>
+	<div class="box">
+		<p>Closing</p>
+	</div>
+	<div class="box">
+		<p>Date</p>
+	</div>
 
 	<repeat group="{{ @bcgoal2 }}" value="{{ @bcgoal }}">
 		<div>
@@ -23,17 +25,20 @@
 		<div>
 			<check if="{{ @bcgoal.NetSales > @bcgoal.goalamount }}">
 				<true>
-						<p class="goalmet">{{ trim(@bcgoal.NetSales) }}</p>
+					<p class="goalmet">{{ trim(@bcgoal.NetSales) }}</p>
 				</true>
 				<false>
-						<p class="goalnotmet">{{ trim(@bcgoal.NetSales) }}</p>
+					<p class="goalnotmet">{{ trim(@bcgoal.NetSales) }}</p>
 				</false>
-				</check>
+			</check>
 		</div>
 		<div>
 			<p>{{ trim(@bcgoal.ClosingBarTender) }}</p>
 		</div>
-	
+		<div>
+			<p>{{ trim(@bcgoal.DateofEntry) }}</p>
+		</div>
+
 	</repeat>
 
 </div>
