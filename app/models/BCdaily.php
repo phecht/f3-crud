@@ -23,6 +23,45 @@ class BCdaily extends DB\SQL\Mapper
         return $last7;
     }
 
+    function Sorter_multi() {
+        // Normalize criteria up front so that the comparer finds everything tidy
+        $criteria = func_get_args();
+        foreach ($criteria as $index => $criterion) {
+            $criteria[$index] = is_array($criterion)
+                ? array_pad($criterion, 3, null)
+                : array($criterion, SORT_ASC, null);
+        }
+
+        return function($first, $second) use ($criteria) {
+            foreach ($criteria as $criterion) {
+                // How will we compare this round?
+                list($column, $sortOrder, $projection) = $criterion;
+                $sortOrder = $sortOrder === SORT_DESC ? -1 : 1;
+
+                // If a projection was defined project the values now
+                if ($projection) {
+                    $lhs = call_user_func($projection, $first[$column]);
+                    $rhs = call_user_func($projection, $second[$column]);
+                }
+                else {
+                    $lhs = $first[$column];
+                    $rhs = $second[$column];
+                }
+
+                // Do the actual comparison; do not return if equal
+                if ($lhs < $rhs) {
+                    return -1 * $sortOrder;
+                }
+                else if ($lhs > $rhs) {
+                    return 1 * $sortOrder;
+                }
+            }
+
+            return 0; // tiebreakers exhausted, so $first == $second
+        };
+    }
+
+
     /**
      * Check $last7 for missing dates.
      * Uses the array_splice to add dates if needed.
@@ -91,7 +130,14 @@ class BCdaily extends DB\SQL\Mapper
         // print_r($last7);
         // print( '<p/>');
 
+        usort($last7, $this->Sorter_multi('DateofEntry'));
+  //      usort($data,  make_comparer('name'));
         // return the last7.
+        // print( 'last7 sorted:<p/>');
+        // print_r($last7);
+        // print( '<p/>');
         return $last7;
     }
+
+
 }
